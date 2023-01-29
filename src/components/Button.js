@@ -1,6 +1,14 @@
+const objClasses = {
+  '=': 'equals',
+  'x': 'opt',
+  '-': 'opt',
+  '+': 'opt',
+  '/': 'opt'
+};
+
 const Button = ({ value }) => {
   return (
-    <button>{value}</button>
+    <button className={`${objClasses[value]} button`}>{value}</button>
   );
 }
 
