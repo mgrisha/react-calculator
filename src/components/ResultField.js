@@ -1,6 +1,12 @@
+import { Textfit } from 'react-textfit'
+
+import { useContext } from "react";
+import { CalcContext } from "../context/CalcContext";
+
 const ResultField = () => {
+  const { calc } = useContext(CalcContext);
   return (
-    <div className="result--field">12432325</div>
+    <Textfit className='result--field' max={70} mode='single'>{calc.num ?? calc.res}</Textfit>
   );
 }
 
