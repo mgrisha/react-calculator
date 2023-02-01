@@ -6,7 +6,7 @@ import { CalcContext } from "../context/CalcContext";
 const ResultField = () => {
   const { calc } = useContext(CalcContext);
   return (
-    <Textfit className='result--field' max={70} mode='single'>{calc.num ?? calc.res}</Textfit>
+    <Textfit className='result--field' max={70} mode='single'>{calc.num ? calc.num : calc.res}</Textfit>
   );
 }
 
