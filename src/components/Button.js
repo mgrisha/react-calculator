@@ -61,7 +61,7 @@ const Button = ({ value }) => {
             if (b > 0) {
               return a / b
             } else {
-              return false;
+              alert('Ділення на 0 не можливе!');
             }
           }
         }
@@ -75,6 +75,22 @@ const Button = ({ value }) => {
     }
   }
 
+  const sqrtClick = () => {
+    setCalc({
+      sign: '',
+      num: Math.sqrt(calc.num),
+      res: Math.sqrt(calc.res)
+    });
+  }
+
+  const percentClick = () => {
+    setCalc({
+      sign: '',
+      num: calc.num / 100,
+      res: calc.res / 100
+    });
+  }
+
   const buttonClick = () => {
     const results = {
       '.': pointClick,
@@ -83,7 +99,9 @@ const Button = ({ value }) => {
       '-': signClick,
       'x': signClick,
       '/': signClick,
-      '=': equalsClick
+      '=': equalsClick,
+      '√': sqrtClick,
+      '%': percentClick
     };
     if (results[value]) {
       return results[value]();
